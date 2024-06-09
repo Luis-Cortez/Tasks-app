@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+button{
+    cursor: pointer;
+}
+
+:root{
+    --light-black: rgba(0,0,0,.4);
+    --mid-black: rgba(0,0,0,.6);
+    --mid-red: rgba(249, 12, 12, 0.3);
+    --mid-blue: rgba(3, 73, 252, 0.653);
+    --mid-purple: rgba(177, 3, 252, 0.3);
+    --shawdow: 0 0 5px white;
+    --green-shawdow: 0 0 10px rgb(0, 195, 0);
+    --purple-shawdow: 0 0 10px rgb(235, 0, 243);
+    --blue-shawdow: 0 0 10px rgb(0, 105, 243);
+    --yellow-shawdow: 0 0 10px rgb(203, 243, 0);
+} 
+
+textarea{
+    background:transparent;
+}
+
+body{
+    background-image: url(./assets/bodybg.png);
+    background-size: cover no-repeat;
+}
+
+.body-filter{
+    background: var(--mid-black);
+    height: 100vh;
+    overflow: auto;
+}
+.main{
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--mid-black)
+}
+
+
+.create-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--mid-blue);
+    border: none;
+    padding: 4px 8px;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 4px;
+    z-index:1;
+}
+
+.create-btn:hover{
+    box-shadow: var(--shawdow);
+}
+
+.create-wrap{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index:2;
+}
+
+.input-wrap{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 10px;
+}
+
+.task-input{
+    margin-left: 10px;
+    width: 550px;
+    border: none;
+    box-shadow: var(--shawdow);
+    background: var(--mid-black);
+    border-radius: 1rem 0;
+    padding: 1rem  1rem;
+    font-weight: 800;
+    text-align: center;
+    font-size: .9rem;
+}
+
+.task-input::placeholder{
+    text-align: center;
+    font-weight: 800;
+    color: white;
+    font-size: .9rem;
+}
+
+
+.close-btn{
+    position: absolute;
+    border: 1px solid black;
+    top: 10px;
+    left: 10px;
+    background: var(--mid-red);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: larger;
+}
+
+.close-btn:hover{
+    cursor: pointer;
+    box-shadow: var(--shawdow);
+    background: transparent;
+}
+
+.add-btn{
+    background: rgba(255, 255, 255,.7);
+    box-shadow: var(--purple-shawdow);
+    text-shadow: var(--purple-shawdow);
+    font-size: .8rem;
+    color: purple;
+    border-radius: 4px;
+    border: none;
+    padding: 8px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.add-btn:hover{
+    color: white;
+    background: transparent;
+    box-shadow: var(--shawdow);
+}
+
+
+
+.display{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    z-index: 0;
+    height: 90%;
+    width: 100%;
+    transform:translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items:center; 
+    gap: 1rem;
+    overflow: auto;
+}
+
+
+.display::-webkit-scrollbar{
+    display: none;
+}
+
+.single-task{
+    border: none;
+    box-shadow: 0 0 5px white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 4px;
+    width: 650px;
+    margin: 1rem 0;
+}
+
+.task{
+    word-break: break-all;
+}
+
+
+.done-btn{
+    align-self: center;
+    padding: 4px;
+    background: var(--mid-purple);
+    border: none;
+    border-radius: 50% 0;
+    font-size: 1rem;
+}
+
+.done-btn:hover{
+    box-shadow: var(--green-shawdow);
+    transform: scale(1.1);
+}
+
+.corrector{
+    color: red;
+    font-size: small;
+    font-weight: 900;
+    text-shadow: var(--blue-shawdow);
+}
+
+.delete-wrap{
+    background: var(--mid-black);
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.delete-wrap div{
+    display: flex;
+    gap: 3rem;
+}
+
+.delete-wrap h2{
+    text-align: center;
+    text-shadow: var(--shawdow);
+}
+
+.yes-btn,.no-btn{
+    align-self: center;
+    padding: 5px  10px;
+    color: white;
+    background: transparent;
+    border: none;
+    box-shadow: var(--blue-shawdow);
+    text-shadow: var(--blue-shawdow);
+    font-weight: 700;
+}
+
+.no-btn{
+    box-shadow: var(--yellow-shawdow);
+    text-shadow: var(--yellow-shawdow);
+}
+
+.hide{
+    display: none;
+}
+
+@media (max-width:650px) {
+    .single-task{
+        width: 85%;
+    }
+
+    .task-input{
+        width: 80%;
+    }
+}
+
