@@ -21,9 +21,6 @@ button{
     --yellow-shawdow: 0 0 10px rgb(203, 243, 0);
 } 
 
-textarea{
-    background:transparent;
-}
 
 body{
     background-image: url(./assets/bodybg.png);
